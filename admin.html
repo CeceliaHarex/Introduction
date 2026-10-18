@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Excellence Without End — 控制台</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f3efe6">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preload" href="assets/fonts/CascadiaCode.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>
+    (function () {
+      document.documentElement.classList.add("js");
+      try {
+        var forced = new URLSearchParams(location.search).get("theme");
+        var saved = localStorage.getItem("pf:theme");
+        var theme = forced === "light" || forced === "dark"
+          ? forced
+          : saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-title="控制台" id="top">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="回到首页">
+        <img class="brand-avatar" src="assets/img/avatar-128.jpg" alt="" width="40" height="40">
+        <span class="brand-name" data-bind="identity.fullName">Cecelia Harex</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav-link" href="index.html"><span>01</span>主页</a>
+        <a class="nav-link is-active" href="admin.html" aria-current="page"><span>02</span>控制台</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="切换深浅色主题">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="studio shell">
+      <header class="studio-head">
+        <div>
+          <p class="section-kicker"><span>Studio</span> 内容控制台</p>
+          <h1 class="studio-title">写点什么，然后发布。</h1>
+          <p class="studio-lede">不用命令行，也不用装软件。写完点发布，文章会提交到你的 GitHub 仓库，大约一分钟后出现在文章页里。</p>
+        </div>
+      </header>
+
+      <!-- 未连接：连接引导 -->
+      <div data-setup>
+        <div class="studio-grid">
+          <section class="card">
+            <div class="card-head">
+              <h2 class="card-title"><b>01</b> 连接你的仓库</h2>
+              <span class="mono">只有第一次需要</span>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label class="field-label" for="repoOwner">仓库所有者 <span>OWNER</span></label>
+                <input class="input" id="repoOwner" data-owner autocomplete="off" spellcheck="false" placeholder="CeceliaHarex">
+              </div>
+              <div class="field">
+                <label class="field-label" for="repoName">仓库名 <span>REPOSITORY</span></label>
+                <input class="input" id="repoName" data-name autocomplete="off" spellcheck="false" placeholder="CeceliaHarex.github.io">
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label class="field-label" for="repoBranch">分支 <span>BRANCH</span></label>
+                <input class="input" id="repoBranch" data-branch value="main" autocomplete="off" spellcheck="false">
+              </div>
+              <div class="field">
+                <label class="field-label" for="repoToken">访问令牌 <span>TOKEN</span></label>
+                <input class="input" id="repoToken" data-token type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_...">
+              </div>
+            </div>
+
+            <label class="check">
+              <input type="checkbox" id="rememberToken" checked>
+              <span>在这台设备记住令牌（推荐，下次打开就不用再填）</span>
+            </label>
+
+            <div class="btn-row">
+              <button class="btn btn-solid" type="button" data-connect>验证并连接</button>
+              <a class="btn btn-ghost btn-sm" href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">
+                去生成令牌
+                <svg data-icon="arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+            <p class="form-error" data-connect-error role="alert"></p>
+          </section>
+
+          <aside class="studio-side">
+            <section class="card">
+              <div class="card-head">
+                <h2 class="card-title">三步拿到令牌</h2>
+              </div>
+              <ol class="steps">
+                <li><span>打开 <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">Fine-grained tokens</a>，点 Generate new token。</span></li>
+                <li><span>Repository access 选 Only select repositories，只勾选放网站的这个仓库。</span></li>
+                <li><span>Repository permissions 里找到 <b>Contents</b>，改成 <b>Read and write</b>，生成并复制 <code>github_pat_...</code>。</span></li>
+              </ol>
+              <p class="help">令牌相当于这个仓库的钥匙，只会保存在你自己的浏览器里，不会出现在网页源码或提交记录中。随时可以在 GitHub 上撤销。</p>
+            </section>
+            <section class="card">
+              <div class="card-head">
+                <h2 class="card-title">为什么不用密码</h2>
+              </div>
+              <p class="help">这是一个纯静态网站，没有自己的服务器。控制台直接调用 GitHub 的官方接口写文件，所以需要一把只对这个仓库有效的钥匙，而不是你的账号密码。</p>
+            </section>
+          </aside>
+        </div>
+      </div>
+
+      <!-- 已连接：编辑器 -->
+      <div data-studio hidden>
+        <div class="connection-bar">
+          <div class="connection-main">
+            <span class="status-pill is-live"><span class="dot"></span>已连接</span>
+            <p class="connection-name"><b data-conn-repo>—</b><br>分支 <span data-conn-branch>main</span> · 内容文件 <span data-conn-path>content/posts.json</span></p>
+          </div>
+          <div class="btn-row" style="margin: 0">
+            <button class="btn btn-ghost btn-sm" type="button" data-refresh-posts>
+              <svg data-icon="refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 4v5h-5"/></svg>
+              刷新文章
+            </button>
+            <button class="btn btn-ghost btn-sm" type="button" data-disconnect>
+              <svg data-icon="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+              断开连接
+            </button>
+          </div>
+        </div>
+
+        <div class="draft-banner" data-draft-banner hidden>
+          <div>
+            <strong>发现上次未发布的草稿</strong>
+            <span data-draft-time></span>
+          </div>
+          <div class="btn-row" style="margin: 0">
+            <button class="btn btn-sm btn-ghost" type="button" data-discard-draft>丢弃</button>
+            <button class="btn btn-sm btn-solid" type="button" data-restore-draft>恢复草稿</button>
+          </div>
+        </div>
+
+        <div class="studio-grid">
+          <section class="card">
+            <div class="card-head">
+              <h2 class="card-title"><b>02</b> 写文章</h2>
+              <span class="mono" data-editor-mode>新文章</span>
+            </div>
+
+            <div class="field" data-field="title">
+              <label class="field-label" for="postTitle">标题 <span>TITLE</span></label>
+              <input class="input" id="postTitle" data-title-input placeholder="给这篇文章起个名字" maxlength="120">
+              <span class="field-error" data-error-for="title">标题不能为空。</span>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label class="field-label" for="postSlug">链接标识 <span>SLUG</span></label>
+                <input class="input" id="postSlug" data-slug-input placeholder="留空会自动生成" maxlength="80" spellcheck="false">
+              </div>
+              <div class="field">
+                <label class="field-label" for="postDate">日期 <span>DATE</span></label>
+                <input class="input" id="postDate" data-date-input type="date">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="postTags">标签 <span>TAGS</span></label>
+              <input class="input" id="postTags" data-tags-input placeholder="用逗号分隔，例如：随笔, 本站">
+              <span class="help">标签会显示在文章列表里，也会成为文章页的筛选按钮。</span>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="postExcerpt">摘要 <span>EXCERPT · 不在列表显示</span></label>
+              <textarea class="textarea" id="postExcerpt" data-excerpt-input rows="2" placeholder="只用于搜索和分享描述，不会显示在文章列表里；留空会自动截取正文。" maxlength="200"></textarea>
+            </div>
+
+            <div class="field" data-field="body">
+              <div class="field-label">
+                <span class="field-name">正文 <small>MARKDOWN</small></span>
+                <span class="help" data-editor-count>0 字</span>
+              </div>
+              <div class="editor-shell" data-editor-shell data-view="write">
+                <div class="editor-tabs" role="tablist" aria-label="编辑与预览">
+                  <button class="editor-tab is-active" type="button" data-editor-view="write" role="tab" aria-selected="true">编辑</button>
+                  <button class="editor-tab" type="button" data-editor-view="preview" role="tab" aria-selected="false">预览</button>
+                  <button class="editor-tab" type="button" data-editor-view="split" role="tab" aria-selected="false">分栏</button>
+                </div>
+                <div class="editor-toolbar">
+                  <button class="tool" type="button" data-md="h2" title="二级标题" aria-label="插入二级标题">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 4v16M18 4v16M6 12h12"/></svg>
+                  </button>
+                  <span class="tool-sep" aria-hidden="true"></span>
+                  <button class="tool" type="button" data-md="bold" title="加粗" aria-label="加粗">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 5h6a4 4 0 0 1 0 8H7zM7 13h7a4 4 0 0 1 0 8H7z"/></svg>
+                  </button>
+                  <button class="tool" type="button" data-md="italic" title="斜体" aria-label="斜体">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M19 4h-9M14 20H5M15 4 9 20"/></svg>
+                  </button>
+                  <button class="tool" type="button" data-md="link" title="链接" aria-label="插入链接">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg>
+                  </button>
+                  <button class="tool" type="button" data-md="code" title="行内代码" aria-label="插入行内代码">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+                  </button>
+                  <span class="tool-sep" aria-hidden="true"></span>
+                  <button class="tool" type="button" data-md="quote" title="引用" aria-label="插入引用">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7H5v6h4c0 3-1 4-4 5M19 7h-4v6h4c0 3-1 4-4 5"/></svg>
+                  </button>
+                  <button class="tool" type="button" data-md="list" title="列表" aria-label="插入列表">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M9 6h12M9 12h12M9 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>
+                  </button>
+                  <span class="tool-sep" aria-hidden="true"></span>
+                  <button class="tool" type="button" data-md="image" title="上传图片" aria-label="上传图片">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 16-5-5L5 20"/></svg>
+                  </button>
+                </div>
+                <div class="editor-panes">
+                  <textarea class="editor-textarea" id="postBody" data-body-input spellcheck="false" aria-label="正文（Markdown）" placeholder="从这里开始写。支持 Markdown：## 标题、**加粗**、- 列表，也可以直接把图片拖进来。"></textarea>
+                  <div class="editor-preview" id="previewPane" aria-live="polite"></div>
+                </div>
+                <div class="editor-foot">
+                  <span data-save-state>未保存</span>
+                  <span data-upload-status></span>
+                </div>
+              </div>
+              <span class="field-error" data-error-for="body">正文不能为空。</span>
+              <p class="help">小提示：公众号式的排版这里也能用。标题用 <code>##</code>，引用用 <code>&gt;</code>，代码用三个反引号包起来。图片会自动上传到仓库的 <code>assets/uploads/</code>。</p>
+            </div>
+
+            <div class="publish-bar">
+              <span class="publish-bar-note" data-publish-note>发布或存草稿都会提交一次 Git commit</span>
+              <div class="btn-row" style="margin: 0">
+                <button class="btn btn-ghost btn-sm" type="button" data-new-post>新建</button>
+                <button class="btn btn-ghost btn-sm" type="button" data-save-draft>存为草稿</button>
+                <button class="btn btn-accent btn-sm" type="button" data-publish>发布</button>
+              </div>
+            </div>
+            <p class="help" data-publish-hint></p>
+          </section>
+
+          <aside class="studio-side">
+            <section class="card">
+              <div class="card-head">
+                <h2 class="card-title">文章 <span data-manage-count></span></h2>
+                <button class="manage-btn" type="button" data-refresh-posts aria-label="刷新文章列表" title="刷新">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 4v5h-5"/></svg>
+                </button>
+              </div>
+              <div class="post-manage" data-manage-list></div>
+            </section>
+
+            <section class="card">
+              <div class="card-head">
+                <h2 class="card-title">作品同步</h2>
+              </div>
+              <p class="help">把 GitHub 上最新的仓库信息写进 <code>content/github-snapshot.json</code>。这样首页不依赖实时接口，也不会被限流。</p>
+              <div class="btn-row">
+                <button class="btn btn-ghost btn-sm" type="button" data-sync-works>同步作品到仓库</button>
+              </div>
+              <p class="help" data-sync-status></p>
+            </section>
+
+            <section class="card">
+              <div class="card-head">
+                <h2 class="card-title">站点设置</h2>
+              </div>
+              <p class="config-link">名字、简介、联系方式都在配置文件里：<br><a data-config-link href="#" target="_blank" rel="noopener">编辑 assets/js/config.js</a></p>
+              <p class="config-link" style="margin-top: 12px">改完提交，GitHub Pages 会自动重新部署。</p>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="studio-footer">
+    <div class="shell">
+      <span class="mono">Studio · 内容只提交到你的仓库</span>
+      <a class="mono" href="index.html">主页</a>
+    </div>
+  </footer>
+
+  <input type="file" id="imageInput" accept="image/*" hidden>
+
+  <dialog id="confirmDialog" aria-labelledby="dialogTitle">
+    <div class="dialog-inner">
+      <h2 class="dialog-title" id="dialogTitle">确认删除？</h2>
+      <p class="dialog-text" id="dialogText">删除后会直接提交到 GitHub，不能撤销。</p>
+      <div class="dialog-actions">
+        <button class="btn btn-ghost btn-sm" type="button" data-dialog-cancel>取消</button>
+        <button class="btn btn-danger btn-sm" type="button" data-dialog-confirm>删除</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/markdown.js" defer></script>
+  <script src="assets/js/github.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/admin.js" defer></script>
+</body>
+</html>

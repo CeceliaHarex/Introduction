@@ -1,0 +1,13 @@
+{
+  "name": "zaqizaba",
+  "version": "1.0.0",
+  "description": "一个纯静态的个人作品集与博客：**作品从 GitHub 自动同步，文章在网页里直接写**。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

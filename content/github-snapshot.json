@@ -1,0 +1,74 @@
+{
+  "updated": "2026-10-18T13:00:00.000Z",
+  "user": {
+    "login": "CeceliaHarex",
+    "created_at": "2022-02-26T03:38:58Z",
+    "public_repos": 1
+  },
+  "repos": [
+    {
+      "name": "zhengfang-apk-NUC",
+      "description": "适用于中北大学的教务助手APP插件",
+      "html_url": "https://github.com/CeceliaHarex/zhengfang-apk-NUC",
+      "language": null,
+      "stargazers_count": 0,
+      "topics": [],
+      "fork": false,
+      "pushed_at": "2026-10-09T14:43:39Z",
+      "updated_at": "2026-10-09T14:43:43Z"
+    }
+  ],
+  "events": [
+    {
+      "type": "PushEvent",
+      "repo": {
+        "name": "CeceliaHarex/zhengfang-apk-NUC"
+      },
+      "payload": {
+        "ref": "refs/heads/main",
+        "head": "382c6477de0f40973b70d50cf7ad3bfb27fb1834",
+        "commits": [
+          {
+            "sha": "382c6477de0f40973b70d50cf7ad3bfb27fb1834",
+            "message": "Update README.md"
+          }
+        ]
+      },
+      "created_at": "2026-10-09T14:43:40Z"
+    },
+    {
+      "type": "PushEvent",
+      "repo": {
+        "name": "CeceliaHarex/zhengfang-apk-NUC"
+      },
+      "payload": {
+        "ref": "refs/heads/main",
+        "head": "eb167bd8fbedf91302e63519c94582121fa36970",
+        "commits": [
+          {
+            "sha": "eb167bd8fbedf91302e63519c94582121fa36970",
+            "message": "Add initial README content in Chinese"
+          }
+        ]
+      },
+      "created_at": "2026-10-09T14:42:07Z"
+    },
+    {
+      "type": "PushEvent",
+      "repo": {
+        "name": "CeceliaHarex/zhengfang-apk-NUC"
+      },
+      "payload": {
+        "ref": "refs/heads/main",
+        "head": "e64072928d6324973a3315c03fa5ef86b0c673ac",
+        "commits": [
+          {
+            "sha": "e64072928d6324973a3315c03fa5ef86b0c673ac",
+            "message": "Add files via upload"
+          }
+        ]
+      },
+      "created_at": "2026-10-09T14:37:08Z"
+    }
+  ]
+}

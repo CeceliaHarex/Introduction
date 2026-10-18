@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Excellence Without End — 主页</title>
+  <meta name="description" content="Excellence Without End — Cecelia Harex 的个人作品集与文章：作品从 GitHub 自动同步，文章可以在站内直接写。">
+  <meta name="theme-color" content="#f3efe6">
+  <meta property="og:title" content="Excellence Without End — 主页">
+  <meta property="og:description" content="Cecelia Harex 的个人作品集与文章：作品从 GitHub 自动同步，文章可以在站内直接写。">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preload" href="assets/fonts/CascadiaCode.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>
+    (function () {
+      document.documentElement.classList.add("js");
+      try {
+        var forced = new URLSearchParams(location.search).get("theme");
+        var saved = localStorage.getItem("pf:theme");
+        var theme = forced === "light" || forced === "dark"
+          ? forced
+          : saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-title="主页" id="top">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="回到首页">
+        <img class="brand-avatar" src="assets/img/avatar-128.jpg" alt="" width="40" height="40">
+        <span class="brand-name" data-bind="identity.fullName">Cecelia Harex</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav-link is-active" href="index.html" aria-current="page"><span>01</span>主页</a>
+        <a class="nav-link" href="works.html"><span>02</span>作品<i class="nav-dot" aria-hidden="true"></i></a>
+        <a class="nav-link" href="activity.html"><span>03</span>活动<i class="nav-dot" aria-hidden="true"></i></a>
+        <a class="nav-link" href="blog.html"><span>04</span>文章</a>
+        <a class="nav-link" href="contact.html"><span>05</span>联系</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="切换深浅色主题">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/>
+          </svg>
+        </button>
+        <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobileMenu" aria-label="打开菜单">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <path d="M3 7h18M3 12h18M3 17h18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-head">
+      <span class="mono">Menu / 菜单</span>
+      <button class="icon-btn" type="button" data-menu-close aria-label="关闭菜单">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 6l12 12M18 6 6 18"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" aria-label="移动端导航">
+      <a href="index.html" aria-current="page"><span>01</span>主页</a>
+      <a href="works.html"><span>02</span>作品<i class="nav-dot" aria-hidden="true"></i></a>
+      <a href="activity.html"><span>03</span>活动<i class="nav-dot" aria-hidden="true"></i></a>
+      <a href="blog.html"><span>04</span>文章</a>
+      <a href="contact.html"><span>05</span>联系</a>
+    </nav>
+    <div class="mobile-menu-foot">
+      <p class="mono" data-bind="contact.github">CeceliaHarex</p>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="hero" id="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <h1 class="hero-title">
+            <span class="line" data-bind="identity.name">Cecelia</span>
+            <span class="line line-alt"><em data-bind="identity.nameEn">Harex</em><span class="dot">.</span></span>
+          </h1>
+
+          <p class="hero-role">
+            <span data-bind="identity.role">开发者 / 折腾者</span>
+            <span class="role-en" data-bind="identity.roleEn">Developer &amp; Tinkerer</span>
+          </p>
+
+          <p class="hero-tagline">
+            <span data-bind="identity.taglineLines.0">把生活里的小麻烦，</span>
+            <span data-bind="identity.taglineLines.1">做成能跑起来的小工具。</span>
+          </p>
+          <p class="hero-bio" data-bind="identity.bio">我在做的东西大多很小：一个能少点几次屏幕的插件，一个把自己的作品讲清楚的网站。</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="works.html">
+              看作品
+              <svg data-icon="arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="contact.html">
+              联系我
+              <svg data-icon="arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-art">
+          <div class="art-card">
+            <img class="art-photo" src="assets/img/hero.jpg" alt="Cecelia 的插画">
+            <div class="art-top">
+              <span>Fig. 01</span>
+              <span>Identity</span>
+            </div>
+            <div class="art-bottom">
+              <span>Local time</span>
+              <span class="art-time" data-clock>--:--</span>
+              <span data-bind="identity.timezoneLabel">GMT+8</span>
+            </div>
+          </div>
+
+          <dl class="art-stats">
+            <div>
+              <dt>公开仓库</dt>
+              <dd data-stat="repos">—</dd>
+            </div>
+            <div>
+              <dt>加入 GitHub</dt>
+              <dd data-stat="since">2022</dd>
+            </div>
+            <div>
+              <dt>最近同步</dt>
+              <dd data-stat="synced">—</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <div class="marquee home-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span class="marquee-item">
+            Open Source//Build in Public//Collaborative Participation//Transparency//Maker//Simplicity is the ultimate sophistication//Reciprocity
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1L3.2 9.5l6.1-.9Z"/></svg>
+          </span>
+        </div>
+        <div class="marquee-group">
+          <span class="marquee-item">
+            Open Source//Build in Public//Collaborative Participation//Transparency//Maker//Simplicity is the ultimate sophistication//Reciprocity
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1L3.2 9.5l6.1-.9Z"/></svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <strong data-bind="identity.name">Cecelia</strong>
+          <span>Excellence Without End</span>
+        </div>
+        <nav class="footer-nav" aria-label="页脚导航">
+          <a href="index.html">主页</a>
+          <a href="works.html">作品</a>
+          <a href="activity.html">活动</a>
+          <a href="blog.html">文章</a>
+          <a href="contact.html">联系</a>
+          <a href="admin.html">控制台</a>
+        </nav>
+        <div class="footer-meta">
+          <span>© <span data-year>2026</span> <span data-bind="identity.name">Cecelia</span></span>
+          <span>GitHub Pages</span>
+          <a href="#top">回到顶部</a>
+        </div>
+      </div>
+      <div class="footer-word" aria-hidden="true" data-bind="identity.name">Cecelia</div>
+    </div>
+  </footer>
+
+  <noscript>
+    <div style="padding: 16px 24px; border-top: 1px solid rgba(0,0,0,.15); font-size: 13px;">
+      这个网站用 JavaScript 从 GitHub 读取作品与文章。开启 JavaScript 后即可正常浏览。
+    </div>
+  </noscript>
+
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/github.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/landing.js" defer></script>
+</body>
+</html>
