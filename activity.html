@@ -82,38 +82,25 @@
   </div>
 
   <main id="main">
-    <section class="about activity-page" id="activity">
-      <div class="shell">
-        <div class="about-grid">
-          <div class="about-lead">
-            <p class="section-kicker"><span>03</span> 活动 / Activity</p>
-            <h1 class="about-statement">
-              <span data-bind="about.statement">先把东西做出来，</span>
-              <em data-bind="about.statementAccent">再把它讲清楚。</em>
-            </h1>
-          </div>
+    <section class="activity-page" id="activity">
+      <div class="shell activity-shell">
+        <p class="section-kicker"><span>03</span> 活动 / Activity</p>
+        <h1 class="activity-title">
+          <span data-bind="about.statement">先把东西做出来，</span>
+          <em data-bind="about.statementAccent">再把它讲清楚。</em>
+        </h1>
 
-          <div class="about-body">
-            <p data-bind="about.paragraphs.0">我习惯从具体的麻烦开始：教务系统难用，就写个插件；想有个地方放作品，就搭这个网站。</p>
-            <p data-bind="about.paragraphs.1">技术上还在往前走。Android 是我最熟悉的地方，Web 是最近花时间最多的方向。</p>
-            <p data-bind="about.paragraphs.2">如果你也在做类似的事，或者只是想聊聊，欢迎来信。</p>
-
-            <div class="activity" data-activity>
-              <div class="activity-head">
-                <span>Latest commits / 最近提交</span>
-                <span class="activity-live"><i aria-hidden="true"></i>GitHub</span>
-              </div>
-              <div class="activity-list" data-activity-list aria-live="polite">
-                <p class="activity-empty">正在读取最近的提交…</p>
-              </div>
-              <a class="link-arrow" href="https://github.com/CeceliaHarex" data-github-link target="_blank" rel="noopener">
-                在 GitHub 上看全部
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-              </a>
+        <div class="activity-panel">
+          <div class="activity" data-activity>
+            <div class="activity-head">
+              <span>Latest commits / 最近提交</span>
+              <span class="activity-live"><i aria-hidden="true"></i>GitHub</span>
             </div>
-
-            <a class="link-arrow" href="contact.html">
-              聊聊你的想法
+            <div class="activity-list" data-activity-list aria-live="polite">
+              <p class="activity-empty">正在读取最近的提交…</p>
+            </div>
+            <a class="link-arrow" href="https://github.com/CeceliaHarex" data-github-link target="_blank" rel="noopener">
+              在 GitHub 上看全部
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
             </a>
           </div>

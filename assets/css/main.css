@@ -89,6 +89,7 @@
 [data-theme="dark"] .section-title em,
 [data-theme="dark"] .page-title em,
 [data-theme="dark"] .works-title em,
+[data-theme="dark"] .activity-title em,
 [data-theme="dark"] .contact-title em,
 [data-theme="dark"] .nav-link::after,
 [data-theme="dark"] .prose a,
@@ -1922,6 +1923,103 @@ button {
 
 .activity-page {
   min-height: calc(100dvh - 78px);
+  padding-block: clamp(52px, 8vh, 100px) clamp(48px, 7vh, 92px);
+}
+
+.activity-shell {
+  max-width: 1040px;
+}
+
+.activity-page .section-kicker {
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.activity-title {
+  max-width: 16ch;
+  margin: 0 auto;
+  text-align: center;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 6vw, 5.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.activity-title em {
+  display: block;
+  font-style: normal;
+  color: var(--accent);
+}
+
+.activity-panel {
+  max-width: 860px;
+  margin: clamp(32px, 5vw, 56px) auto 0;
+  padding: clamp(20px, 3.6vw, 38px);
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper-raised) 84%, transparent);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+.activity-panel .activity {
+  margin: 0;
+  border-top: 0;
+}
+
+.activity-panel .activity-head {
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+.activity-panel .activity-live {
+  color: var(--muted);
+}
+
+.activity-panel .activity-live i {
+  background: #22c55e;
+}
+
+.activity-panel .commit {
+  border-color: var(--line);
+}
+
+.activity-panel .commit-top {
+  color: var(--muted);
+}
+
+.activity-panel .commit-repo {
+  color: var(--ink);
+}
+
+.activity-panel .commit-branch {
+  border-color: var(--line-strong);
+  color: var(--accent);
+}
+
+.activity-panel .commit-count {
+  color: var(--accent);
+}
+
+.activity-panel .commit-msg {
+  color: var(--ink-soft);
+}
+
+.activity-panel .commit:hover .commit-msg {
+  color: var(--ink);
+}
+
+.activity-panel .activity-empty {
+  color: var(--muted);
+}
+
+.activity-panel .activity-empty a {
+  color: var(--accent);
+}
+
+.activity-panel .link-arrow {
+  color: var(--ink);
 }
 
 .contact-page {
@@ -3687,6 +3785,19 @@ dialog::backdrop {
   .contact-page .contact-title {
     max-width: none;
     font-size: clamp(2.2rem, 9vw, 3.4rem);
+  }
+
+  .activity-page {
+    padding-block: 42px 56px;
+  }
+
+  .activity-title {
+    font-size: clamp(2.2rem, 10vw, 3.6rem);
+  }
+
+  .activity-panel {
+    margin-top: 28px;
+    padding: 18px;
   }
 
   html {
